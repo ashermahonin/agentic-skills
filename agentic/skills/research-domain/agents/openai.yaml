@@ -1,0 +1,4 @@
+interface:
+  display_name: "Domain Research"
+  short_description: "Maps users, domain facts, and constraints."
+  default_prompt: "Use $research-domain to build the domain context and assumptions before requirements or architecture."

@@ -1,0 +1,31 @@
+---
+id: 15-container-view
+type: project-artifact
+status: draft
+owners: []
+service: null
+language: null
+parent: null
+depends_on: []
+risk_level: unknown
+updated_at: null
+---
+
+# 15-container-view
+
+## Content
+
+- containers
+- responsibilities
+- interfaces
+- data flow
+- Mermaid/C4 container diagram
+
+## Links
+
+- Parent: [[00-home]]
+- Requirements: [[11-functional-requirements]], [[12-nonfunctional-requirements]], [[13-quality-scenarios]]
+- ADRs: [[22-adr-index]]
+- Tasks: [[24-epics]], [[25-stories]], [[26-tasks]], [[27-dependency-graph]], [[28-parallelization-plan]]
+- Risks: [[07-risk-register]]
+- Services and owners: [[23-service-catalog]], [[29-agent-role-matrix]]

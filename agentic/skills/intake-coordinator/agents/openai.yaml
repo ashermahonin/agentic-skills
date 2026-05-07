@@ -1,0 +1,4 @@
+interface:
+  display_name: "Intake Coordinator"
+  short_description: "Turns vague requests into usable briefs."
+  default_prompt: "Use $intake-coordinator to clarify the request, constraints, success criteria, and approval gates before work starts."

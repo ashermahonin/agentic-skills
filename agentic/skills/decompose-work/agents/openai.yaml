@@ -1,0 +1,4 @@
+interface:
+  display_name: "Work Decomposition"
+  short_description: "Breaks approved designs into safe tasks."
+  default_prompt: "Use $decompose-work to turn approved requirements and architecture into epics, tasks, dependencies, and parallel work ownership."

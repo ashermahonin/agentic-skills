@@ -1,0 +1,4 @@
+interface:
+  display_name: "Codebase Archaeology"
+  short_description: "Maps existing systems before changing them."
+  default_prompt: "Use $analyze-codebase to reconstruct current architecture, hotspots, and migration gaps before modifying an existing repo."

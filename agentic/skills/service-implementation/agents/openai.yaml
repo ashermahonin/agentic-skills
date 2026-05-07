@@ -1,0 +1,4 @@
+interface:
+  display_name: "Service Implementation"
+  short_description: "Implements bounded tasks with validation."
+  default_prompt: "Use $service-implementation to implement a bounded module or service after scope, ownership, contracts, and validation are clear."

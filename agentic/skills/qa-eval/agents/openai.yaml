@@ -1,0 +1,4 @@
+interface:
+  display_name: "QA and Eval"
+  short_description: "Verifies behavior before release."
+  default_prompt: "Use $qa-eval to plan and run tests, acceptance checks, evals, smoke tests, and release readiness gates."

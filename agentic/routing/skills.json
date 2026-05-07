@@ -1,0 +1,143 @@
+{
+  "principles": [
+    "Plan first for complex or ambiguous work.",
+    "Keep permanent rules in AGENTS.md and CLAUDE.md.",
+    "Use skills for repeatable procedures, not always-on prompt bloat.",
+    "Enable multi-agent work only after interfaces and ownership are explicit.",
+    "Keep research/planning/review read-only until gates pass.",
+    "Update documentation and graph links together with code."
+  ],
+  "entrypoints": {
+    "new_product": [
+      "sdlc-orchestrator",
+      "intake-coordinator",
+      "research-domain",
+      "competitive-analysis",
+      "requirements-quality",
+      "architecture-review",
+      "user-journey-mapper",
+      "decompose-work",
+      "service-implementation",
+      "qa-eval",
+      "documentation-graph-curator"
+    ],
+    "existing_product_improvement": [
+      "sdlc-orchestrator",
+      "analyze-codebase",
+      "requirements-quality",
+      "architecture-review",
+      "user-journey-mapper",
+      "decompose-work",
+      "service-implementation",
+      "qa-eval",
+      "documentation-graph-curator"
+    ],
+    "narrow_code_change": [
+      "intake-coordinator",
+      "service-implementation",
+      "qa-eval",
+      "pr-review",
+      "documentation-graph-curator"
+    ],
+    "review_only": [
+      "pr-review"
+    ],
+    "documentation_sync": [
+      "documentation-graph-curator"
+    ]
+  },
+  "permissions": {
+    "read_only": [
+      "intake-coordinator",
+      "research-domain",
+      "competitive-analysis",
+      "requirements-quality",
+      "analyze-codebase",
+      "architecture-review",
+      "user-journey-mapper",
+      "decompose-work",
+      "perf-and-memory",
+      "qa-eval",
+      "pr-review",
+      "documentation-graph-curator"
+    ],
+    "write_after_gates": [
+      "service-implementation"
+    ],
+    "orchestrates": [
+      "sdlc-orchestrator"
+    ]
+  },
+  "skills": [
+    {
+      "name": "sdlc-orchestrator",
+      "path": "agentic/skills/sdlc-orchestrator/SKILL.md",
+      "description": "Orchestrate full software-development lifecycle work from first request to release readiness. Use when the user asks to build a product, improve an existing product, rebuild a messy system, coordinate several skills, choose between greenfield and migration work, or move a broad task through intake, research, requirements, architecture, decomposition, implementation, verification, and documentation gates."
+    },
+    {
+      "name": "intake-coordinator",
+      "path": "agentic/skills/intake-coordinator/SKILL.md",
+      "description": "Clarify and scope incoming product or engineering requests before research, architecture, or coding starts. Use when the request is broad, emotionally urgent, ambiguous, risky, multi-phase, missing success criteria, missing constraints, missing non-goals, or likely to create rework if the agent starts implementation too early."
+    },
+    {
+      "name": "research-domain",
+      "path": "agentic/skills/research-domain/SKILL.md",
+      "description": "Research domain context, users, jobs-to-be-done, constraints, terminology, workflows, risks, and decision pressure before requirements or architecture. Use when creating a new product, entering an unfamiliar domain, validating product assumptions, preparing `05-domain-research.md`, or deciding what the system must respect before design or implementation begins."
+    },
+    {
+      "name": "competitive-analysis",
+      "path": "agentic/skills/competitive-analysis/SKILL.md",
+      "description": "Run competitive, adjacent-market, or alternative-solution analysis for product planning. Use when the project needs competitor scan, substitute workflow analysis, feature matrix, pricing or packaging comparison, positioning, wedge selection, blind-spot discovery, opportunity mapping, or `06-competitor-analysis.md` before product scope is locked."
+    },
+    {
+      "name": "requirements-quality",
+      "path": "agentic/skills/requirements-quality/SKILL.md",
+      "description": "Convert product scope into functional requirements, nonfunctional requirements, measurable quality scenarios, acceptance criteria, and traceable requirement links. Use before architecture or implementation when FR/NFR lists, reliability, security, observability, performance, maintainability, compatibility, accessibility, data-safety, or artifacts `11-functional-requirements.md` through `13-quality-scenarios.md` are needed."
+    },
+    {
+      "name": "analyze-codebase",
+      "path": "agentic/skills/analyze-codebase/SKILL.md",
+      "description": "Analyze an existing repository in read-only mode to reconstruct current behavior, architecture, dependency clusters, build and test health, hotspots, tech debt, ownership boundaries, integration points, and current-vs-target gaps. Use for existing-product improvement, migration planning, code archaeology, risky refactors, unfamiliar repositories, or artifacts `80-current-state-scan.md` through `85-migration-plan.md` before writing code."
+    },
+    {
+      "name": "architecture-review",
+      "path": "agentic/skills/architecture-review/SKILL.md",
+      "description": "Design or review software architecture using system context, container, component, runtime, deployment, data, API, integration, crosscutting concepts, and ADR artifacts. Use before large implementation, service-boundary changes, infrastructure changes, API or data contract changes, migrations, reliability work, security-sensitive design, or architecture artifacts `14-system-context.md` through `22-adr-index.md`."
+    },
+    {
+      "name": "user-journey-mapper",
+      "path": "agentic/skills/user-journey-mapper/SKILL.md",
+      "description": "Map user journeys, story maps, interaction flows, alternate paths, failure paths, release slices, and scenario-to-task links before decomposition. Use when a product workflow, UX flow, story map, persona path, acceptance scenario, or `09-user-story-map.md` and `10-user-journeys.md` artifact must be clarified before epics, stories, tasks, or parallel implementation are assigned."
+    },
+    {
+      "name": "decompose-work",
+      "path": "agentic/skills/decompose-work/SKILL.md",
+      "description": "Break approved product scope and architecture artifacts into epics, user stories, implementation tasks, dependency graph, critical path, ownership map, validation packs, merge order, and parallelization plan. Use after requirements and architecture are approved and before assigning implementation agents, opening parallel work, or writing artifacts `24-epics.md` through `29-agent-role-matrix.md`."
+    },
+    {
+      "name": "service-implementation",
+      "path": "agentic/skills/service-implementation/SKILL.md",
+      "description": "Implement a specific service, module, feature slice, bug fix, migration step, or bounded-context task after requirements, architecture, contracts, file ownership, validation pack, and documentation expectations are clear. Use for coding work where the agent owns a defined path or component and must preserve surrounding behavior, tests, data safety, and project memory."
+    },
+    {
+      "name": "perf-and-memory",
+      "path": "agentic/skills/perf-and-memory/SKILL.md",
+      "description": "Review or plan performance, memory, allocation, concurrency, caching, latency, throughput, profiling, benchmark, capacity, and language-runtime work. Use when a task mentions speed, memory, scale, load, p95/p99 latency, CPU, heap, allocations, async/concurrency, streaming, database query cost, caching, or artifacts `30-language-profiles.md` and performance-related quality scenarios."
+    },
+    {
+      "name": "qa-eval",
+      "path": "agentic/skills/qa-eval/SKILL.md",
+      "description": "Plan and run verification gates for unit, integration, browser, contract, migration, security, performance, accessibility, smoke, acceptance, and eval scenarios. Use before merge or release, after implementation, when validation evidence is missing, when quality scenarios need proof, or when artifacts `32-test-strategy.md`, `33-evaluation-plan.md`, and release readiness notes must be produced."
+    },
+    {
+      "name": "pr-review",
+      "path": "agentic/skills/pr-review/SKILL.md",
+      "description": "Review pull requests or local diffs for correctness, regressions, missing tests, security, data safety, API compatibility, migration safety, performance risk, accessibility issues, operational hazards, and documentation drift. Use before merge, push, release, or whenever the user asks for code review, risk review, pre-landing review, or final check."
+    },
+    {
+      "name": "documentation-graph-curator",
+      "path": "agentic/skills/documentation-graph-curator/SKILL.md",
+      "description": "Maintain project documentation and Obsidian-first knowledge graph using Markdown notes, wikilinks, ADRs, artifact indexes, Mermaid diagrams as visual layer, change logs, and graph hygiene. Use when syncing docs after code changes, creating a project vault skeleton, updating project memory, linking requirements to architecture and tasks, cleaning stale notes, or making sure agents can navigate the project without confusion."
+    }
+  ]
+}

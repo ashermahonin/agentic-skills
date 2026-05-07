@@ -1,0 +1,4 @@
+interface:
+  display_name: "Requirements Quality"
+  short_description: "Turns scope into testable requirements."
+  default_prompt: "Use $requirements-quality to convert scope into functional, nonfunctional, and acceptance criteria artifacts."

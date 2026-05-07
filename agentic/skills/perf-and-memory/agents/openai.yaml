@@ -1,0 +1,4 @@
+interface:
+  display_name: "Performance and Memory"
+  short_description: "Reviews speed, scale, and allocation risk."
+  default_prompt: "Use $perf-and-memory to plan or review latency, throughput, memory, concurrency, and profiling work."

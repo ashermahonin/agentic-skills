@@ -1,0 +1,4 @@
+interface:
+  display_name: "Competitive Analysis"
+  short_description: "Compares alternatives and sharpens position."
+  default_prompt: "Use $competitive-analysis to compare alternatives, gaps, and positioning before scope decisions."

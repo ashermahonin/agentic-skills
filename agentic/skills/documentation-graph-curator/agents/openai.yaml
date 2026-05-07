@@ -1,0 +1,4 @@
+interface:
+  display_name: "Documentation Graph Curator"
+  short_description: "Keeps project memory and graph links clean."
+  default_prompt: "Use $documentation-graph-curator to update Obsidian notes, wikilinks, ADRs, Mermaid visuals, and project memory after work changes."

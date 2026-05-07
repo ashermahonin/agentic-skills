@@ -1,0 +1,4 @@
+interface:
+  display_name: "Architecture Review"
+  short_description: "Shapes system decisions before code."
+  default_prompt: "Use $architecture-review to design or review architecture, contracts, runtime flows, and ADRs before implementation."

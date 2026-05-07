@@ -1,0 +1,151 @@
+<svg width="1180" height="940" viewBox="0 0 1180 940" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">代理技能路由流程</title>
+  <desc id="desc">四段式路由图，展示请求分类、规划关卡、实现与验证，以及项目记忆同步。</desc>
+  <defs>
+    <filter id="softShadow" x="-12%" y="-18%" width="124%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#17201D" flood-opacity="0.10"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#38524C"/>
+    </marker>
+    <style>
+      .bg { fill: #FBFAF7; }
+      .shell { fill: #FFFFFF; stroke: #E9E1D5; stroke-width: 1.4; }
+      .title { font: 700 38px -apple-system, BlinkMacSystemFont, "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", "Segoe UI", sans-serif; fill: #17201D; }
+      .subtitle { font: 400 18px -apple-system, BlinkMacSystemFont, "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", "Segoe UI", sans-serif; fill: #5F6F69; }
+      .phase { fill: #FFFFFF; stroke: #E6DFD3; stroke-width: 1.3; filter: url(#softShadow); }
+      .phaseTitle { font: 800 16px -apple-system, BlinkMacSystemFont, "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", "Segoe UI", sans-serif; fill: #425650; letter-spacing: .03em; }
+      .phaseSub { font: 400 13px -apple-system, BlinkMacSystemFont, "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", "Segoe UI", sans-serif; fill: #6D7B76; }
+      .num { fill: #1F4F46; }
+      .numText { font: 800 15px -apple-system, BlinkMacSystemFont, "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", "Segoe UI", sans-serif; fill: #FFFFFF; }
+      .node { stroke-width: 1.2; }
+      .entry { fill: #1F4F46; stroke: #1B443D; }
+      .plan { fill: #F4F0E8; stroke: #DCCFBC; }
+      .scan { fill: #F8F6F1; stroke: #DCCFBC; }
+      .build { fill: #E8F1FF; stroke: #B8CCE8; }
+      .verify { fill: #EEF8EC; stroke: #B8D9B0; }
+      .memory { fill: #F8E9F1; stroke: #DCB4C6; }
+      .chip { fill: #F7F9F8; stroke: #D9E1DE; stroke-width: 1; }
+      .nodeTitle { font: 800 15px -apple-system, BlinkMacSystemFont, "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", "Segoe UI", sans-serif; fill: #18211F; }
+      .nodeText { font: 400 12.5px -apple-system, BlinkMacSystemFont, "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", "Segoe UI", sans-serif; fill: #52615C; }
+      .entryText { fill: #FFFFFF; }
+      .line { fill: none; stroke: #38524C; stroke-width: 2.4; marker-end: url(#arrow); }
+      .thinLine { fill: none; stroke: #6F827C; stroke-width: 1.8; marker-end: url(#arrow); }
+      .phaseLine { fill: none; stroke: #38524C; stroke-width: 2.6; marker-end: url(#arrow); }
+      .caption { font: 600 12.5px -apple-system, BlinkMacSystemFont, "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", "Segoe UI", sans-serif; fill: #61716C; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1180" height="940" rx="30"/>
+
+  <text x="70" y="70" class="title">代理技能路由流程</text>
+  <text x="70" y="103" class="subtitle">四步路径：分类、规划、实现，并同步项目记忆。</text>
+
+  <rect x="48" y="132" width="1084" height="760" rx="26" class="shell"/>
+
+  <!-- 1. Entry -->
+  <rect x="82" y="158" width="1016" height="150" rx="20" class="phase"/>
+  <circle cx="118" cy="198" r="18" class="num"/>
+  <text x="113" y="204" class="numText">1</text>
+  <text x="148" y="194" class="phaseTitle">请求分类</text>
+  <text x="148" y="218" class="phaseSub">编排器在重写入工作开始前，选择正确入口。</text>
+
+  <rect x="150" y="242" width="170" height="46" rx="14" class="node entry"/>
+  <text x="172" y="271" class="nodeTitle entryText">用户请求</text>
+
+  <rect x="430" y="233" width="210" height="64" rx="14" class="node entry"/>
+  <text x="452" y="258" class="nodeTitle entryText">生命周期编排器</text>
+  <text x="452" y="277" class="nodeText entryText">分类、把关、路由</text>
+
+  <rect x="750" y="233" width="210" height="64" rx="14" class="node entry"/>
+  <text x="772" y="258" class="nodeTitle entryText">入口类型</text>
+  <text x="772" y="277" class="nodeText entryText">新建 / 现有 / 小任务</text>
+
+  <path class="line" d="M320 265 H430"/>
+  <path class="line" d="M640 265 H750"/>
+
+  <!-- 2. Planning -->
+  <rect x="82" y="344" width="1016" height="238" rx="20" class="phase"/>
+  <circle cx="118" cy="384" r="18" class="num"/>
+  <text x="113" y="390" class="numText">2</text>
+  <text x="148" y="380" class="phaseTitle">制定计划</text>
+  <text x="148" y="404" class="phaseSub">研究、需求、架构、旅程和拆解，在关卡清晰前保持只读。</text>
+
+  <rect x="124" y="438" width="134" height="56" rx="14" class="node plan"/>
+  <text x="144" y="462" class="nodeTitle">接收</text>
+  <text x="144" y="481" class="nodeText">范围、风险</text>
+
+  <rect x="282" y="438" width="134" height="56" rx="14" class="node plan"/>
+  <text x="302" y="462" class="nodeTitle">研究</text>
+  <text x="302" y="481" class="nodeText">领域、市场</text>
+
+  <rect x="440" y="438" width="150" height="56" rx="14" class="node plan"/>
+  <text x="460" y="462" class="nodeTitle">需求</text>
+  <text x="460" y="481" class="nodeText">功能、质量</text>
+
+  <rect x="614" y="438" width="142" height="56" rx="14" class="node plan"/>
+  <text x="634" y="462" class="nodeTitle">架构</text>
+  <text x="634" y="481" class="nodeText">视图、决策、接口</text>
+
+  <rect x="780" y="438" width="142" height="56" rx="14" class="node plan"/>
+  <text x="800" y="462" class="nodeTitle">旅程</text>
+  <text x="800" y="481" class="nodeText">流程、切片</text>
+
+  <rect x="946" y="438" width="130" height="56" rx="14" class="node plan"/>
+  <text x="966" y="462" class="nodeTitle">拆解</text>
+  <text x="966" y="481" class="nodeText">任务、负责人</text>
+
+  <path class="line" d="M258 466 H282"/>
+  <path class="line" d="M416 466 H440"/>
+  <path class="line" d="M590 466 H614"/>
+  <path class="line" d="M756 466 H780"/>
+  <path class="line" d="M922 466 H946"/>
+
+  <rect x="124" y="526" width="292" height="30" rx="15" class="chip"/>
+  <text x="145" y="546" class="caption">现有产品：先分析代码库</text>
+
+  <rect x="430" y="526" width="282" height="30" rx="15" class="chip"/>
+  <text x="451" y="546" class="caption">小任务：仅保留必要关卡</text>
+
+  <rect x="728" y="526" width="348" height="30" rx="15" class="chip"/>
+  <text x="749" y="546" class="caption">高风险阶段可加入性能与内存</text>
+
+  <!-- 3. Build and verify -->
+  <rect x="82" y="622" width="1016" height="134" rx="20" class="phase"/>
+  <circle cx="118" cy="662" r="18" class="num"/>
+  <text x="113" y="668" class="numText">3</text>
+  <text x="148" y="658" class="phaseTitle">实现与验证</text>
+  <text x="148" y="682" class="phaseSub">计划关卡通过后开放写权限，再由验证和评审收口。</text>
+
+  <rect x="222" y="704" width="210" height="50" rx="14" class="node build"/>
+  <text x="246" y="734" class="nodeTitle">实现</text>
+
+  <rect x="518" y="704" width="170" height="50" rx="14" class="node verify"/>
+  <text x="543" y="734" class="nodeTitle">质量评估</text>
+
+  <rect x="774" y="704" width="170" height="50" rx="14" class="node verify"/>
+  <text x="799" y="734" class="nodeTitle">合并评审</text>
+
+  <path class="line" d="M432 729 H518"/>
+  <path class="line" d="M688 729 H774"/>
+
+  <!-- 4. Memory -->
+  <rect x="82" y="796" width="1016" height="78" rx="20" class="phase"/>
+  <circle cx="118" cy="836" r="18" class="num"/>
+  <text x="113" y="842" class="numText">4</text>
+  <text x="148" y="828" class="phaseTitle">同步项目记忆</text>
+  <text x="148" y="851" class="phaseSub">文档、决策和双链成为可复用上下文。</text>
+
+  <rect x="610" y="816" width="248" height="42" rx="14" class="node memory"/>
+  <text x="633" y="842" class="nodeTitle">文档图谱维护</text>
+
+  <rect x="900" y="816" width="170" height="42" rx="14" class="node memory"/>
+  <text x="923" y="842" class="nodeTitle">项目图谱</text>
+
+  <path class="thinLine" d="M858 837 H900"/>
+
+  <!-- Phase handoffs -->
+  <path class="phaseLine" d="M590 308 V344"/>
+  <path class="phaseLine" d="M590 582 V622"/>
+  <path class="phaseLine" d="M590 756 V796"/>
+</svg>

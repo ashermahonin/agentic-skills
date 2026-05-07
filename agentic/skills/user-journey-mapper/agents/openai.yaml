@@ -1,0 +1,4 @@
+interface:
+  display_name: "User Journey Mapper"
+  short_description: "Maps user journeys before work breakdown."
+  default_prompt: "Use $user-journey-mapper to map user journeys, story maps, and interaction scenarios before decomposition."

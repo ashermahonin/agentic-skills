@@ -1,0 +1,4 @@
+interface:
+  display_name: "SDLC Orchestrator"
+  short_description: "Routes product work through clear gates."
+  default_prompt: "Use $sdlc-orchestrator to route this product or engineering request through the right skills and gates."
