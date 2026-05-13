@@ -25,6 +25,13 @@ Turn an unclear request into a working brief without making the user repeat them
 5. Name the next skill and the artifact it should produce.
 6. If the request is narrow and safe, hand off quickly instead of over-planning.
 
+## Principal-Level Defaults
+
+- Follow `../../routing/principal-operating-model.md` before moving from analysis to implementation.
+- Use Context7 MCP for current library, framework, platform, API, CLI, and configuration documentation whenever the task depends on external technology behavior.
+- Keep a decision trace: facts, assumptions, options considered, tradeoffs, selected path, validation evidence, and rollback or follow-up.
+- Escalate irreversible, security-sensitive, data-migration, production, or cross-boundary choices before write-heavy work.
+
 ## Output Artifacts
 
 - Request brief

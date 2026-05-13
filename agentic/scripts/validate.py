@@ -44,6 +44,8 @@ def check_skill(path: Path, errors: list[str]) -> None:
     for heading in ["## Role", "## Start By", "## Procedure", "## Output Artifacts", "## Quality Bar", "## Handoff", "## References"]:
         if heading not in text:
             fail(f"{path}: missing {heading}", errors)
+    if "## Principal-Level Defaults" not in text:
+        fail(f"{path}: missing ## Principal-Level Defaults", errors)
     if "TODO" in text:
         fail(f"{path}: contains TODO", errors)
     ref_match = re.search(r"`references/([^`]+)`", text)
@@ -52,8 +54,12 @@ def check_skill(path: Path, errors: list[str]) -> None:
     elif not (path.parent / "references" / ref_match.group(1)).exists():
         fail(f"{path}: referenced file does not exist: {ref_match.group(1)}", errors)
     openai = path.parent / "agents" / "openai.yaml"
-    if openai.exists() and f"Use ${path.parent.name}" not in openai.read_text(encoding="utf-8"):
-        fail(f"{openai}: default_prompt must mention ${path.parent.name}", errors)
+    if openai.exists():
+        openai_text = openai.read_text(encoding="utf-8")
+        if f"Use ${path.parent.name}" not in openai_text:
+            fail(f"{openai}: default_prompt must mention ${path.parent.name}", errors)
+        if 'value: "context7"' not in openai_text:
+            fail(f"{openai}: missing Context7 MCP dependency metadata", errors)
 
 def check_markdown_links(path: Path, errors: list[str]) -> None:
     text = path.read_text(encoding="utf-8")
@@ -85,12 +91,16 @@ def main() -> int:
         if not (ROOT / required_root).exists():
             fail(f"missing {required_root}", errors)
     readme = (ROOT / "README.md").read_text(encoding="utf-8") if (ROOT / "README.md").exists() else ""
-    for token in ["agentic/docs/README.ru.md", "agentic/docs/README.es.md", "agentic/docs/README.zh.md", "agentic/docs/assets/routing-flow.svg", "--global", "--local", "CODEX_HOME", "CLAUDE_HOME", "AGENTS_HOME", "## Overview"]:
+    for token in ["agentic/docs/README.ru.md", "agentic/docs/README.es.md", "agentic/docs/README.zh.md", "agentic/docs/assets/routing-flow.svg", "--global", "--local", "CODEX_HOME", "CLAUDE_HOME", "AGENTS_HOME", "## Overview", "Context7 MCP"]:
         if token not in readme:
             fail(f"README.md missing {token}", errors)
     for doc in ["README.md", "README.ru.md", "README.es.md", "README.zh.md", "research-summary.md", "assets/routing-flow.svg", "assets/routing-flow.ru.svg", "assets/routing-flow.es.svg", "assets/routing-flow.zh.svg"]:
         if not (ROOT / "agentic" / "docs" / doc).exists():
             fail(f"missing agentic/docs/{doc}", errors)
+    for doc in ["README.md", "README.ru.md", "README.es.md", "README.zh.md"]:
+        doc_path = ROOT / "agentic" / "docs" / doc
+        if doc_path.exists() and "Context7 MCP" not in doc_path.read_text(encoding="utf-8"):
+            fail(f"agentic/docs/{doc} missing Context7 MCP prerequisite", errors)
     markdown_files = [p for p in ROOT.rglob("*.md") if ".git" not in p.parts]
     for md in markdown_files:
         if md.exists():
@@ -102,9 +112,12 @@ def main() -> int:
     routing_readme = ROOT / "agentic" / "routing" / "README.md"
     if routing_readme.exists():
         routing_text = routing_readme.read_text(encoding="utf-8")
-        for token in ["## Русский", "## English", "```mermaid"]:
+        for token in ["## Русский", "## English", "```mermaid", "Context7 MCP", "principal-operating-model.md"]:
             if token not in routing_text:
                 fail(f"routing/README.md missing {token}", errors)
+    principal_model = ROOT / "agentic" / "routing" / "principal-operating-model.md"
+    if not principal_model.exists():
+        fail("missing agentic/routing/principal-operating-model.md", errors)
     skills_dir = ROOT / "agentic" / "skills"
     skill_files = sorted(skills_dir.glob("*/SKILL.md"))
     if len(skill_files) != 14:
@@ -112,6 +125,12 @@ def main() -> int:
     for skill in skill_files:
         check_skill(skill, errors)
     routing = json.loads((ROOT / "agentic" / "routing" / "skills.json").read_text(encoding="utf-8"))
+    prereqs = routing.get("prerequisites", {})
+    mcp_names = {item.get("name") for item in prereqs.get("mcp", [])}
+    if "context7" not in mcp_names:
+        fail("routing prerequisites missing Context7 MCP", errors)
+    if prereqs.get("principal_operating_model") != "agentic/routing/principal-operating-model.md":
+        fail("routing prerequisites missing principal operating model", errors)
     routed = {item["name"] for item in routing.get("skills", [])}
     actual = {p.parent.name for p in skill_files}
     if routed != actual:
@@ -144,7 +163,7 @@ def main() -> int:
         fail("install.sh is not executable", errors)
     else:
         installer_text = installer.read_text(encoding="utf-8")
-        for token in ["CODEX_HOME", "CLAUDE_HOME", "AGENTS_HOME", "DRY_RUN"]:
+        for token in ["CODEX_HOME", "CLAUDE_HOME", "AGENTS_HOME", "DRY_RUN", "Context7 MCP"]:
             if token not in installer_text:
                 fail(f"install.sh missing {token}", errors)
     if errors:

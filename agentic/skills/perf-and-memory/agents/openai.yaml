@@ -2,3 +2,8 @@ interface:
   display_name: "Performance and Memory"
   short_description: "Reviews speed, scale, and allocation risk."
   default_prompt: "Use $perf-and-memory to plan or review latency, throughput, memory, concurrency, and profiling work."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "context7"
+      description: "Context7 MCP for current library, framework, platform, API, CLI, and tool documentation"

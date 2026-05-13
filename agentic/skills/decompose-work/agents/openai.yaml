@@ -2,3 +2,8 @@ interface:
   display_name: "Work Decomposition"
   short_description: "Breaks approved designs into safe tasks."
   default_prompt: "Use $decompose-work to turn approved requirements and architecture into epics, tasks, dependencies, and parallel work ownership."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "context7"
+      description: "Context7 MCP for current library, framework, platform, API, CLI, and tool documentation"

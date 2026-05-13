@@ -24,6 +24,13 @@ Prevent the team from building in a vacuum. Compare the proposed product against
 4. Identify a wedge: the narrow reason this product should exist first.
 5. Translate findings into scope recommendations and product risks.
 
+## Principal-Level Defaults
+
+- Follow `../../routing/principal-operating-model.md` before moving from analysis to implementation.
+- Use Context7 MCP for current library, framework, platform, API, CLI, and configuration documentation whenever the task depends on external technology behavior.
+- Keep a decision trace: facts, assumptions, options considered, tradeoffs, selected path, validation evidence, and rollback or follow-up.
+- Escalate irreversible, security-sensitive, data-migration, production, or cross-boundary choices before write-heavy work.
+
 ## Output Artifacts
 
 - Alternative list

@@ -42,6 +42,10 @@ Environment:
   CODEX_HOME            Codex home for --global. Default: $HOME/.codex
   CLAUDE_HOME           Claude Code home for --global. Default: $HOME/.claude
   AGENTS_HOME           Generic agents home for --global. Default: $HOME/.agents
+
+Prerequisite:
+  Context7 MCP should be registered in the target agent as context7/mcpcontext7.
+  This installer installs skills only; it does not configure MCP servers.
 USAGE
 }
 

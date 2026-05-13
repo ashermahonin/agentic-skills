@@ -25,6 +25,13 @@ Slow the impulse to edit until the system has been understood. Produce an eviden
 5. Compare current architecture to the requested target and write migration risks before proposing edits.
 6. Stay read-only unless the user explicitly moves the work into implementation.
 
+## Principal-Level Defaults
+
+- Follow `../../routing/principal-operating-model.md` before moving from analysis to implementation.
+- Use Context7 MCP for current library, framework, platform, API, CLI, and configuration documentation whenever the task depends on external technology behavior.
+- Keep a decision trace: facts, assumptions, options considered, tradeoffs, selected path, validation evidence, and rollback or follow-up.
+- Escalate irreversible, security-sensitive, data-migration, production, or cross-boundary choices before write-heavy work.
+
 ## Output Artifacts
 
 - Current-state scan

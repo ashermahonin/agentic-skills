@@ -2,3 +2,8 @@ interface:
   display_name: "Codebase Archaeology"
   short_description: "Maps existing systems before changing them."
   default_prompt: "Use $analyze-codebase to reconstruct current architecture, hotspots, and migration gaps before modifying an existing repo."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "context7"
+      description: "Context7 MCP for current library, framework, platform, API, CLI, and tool documentation"

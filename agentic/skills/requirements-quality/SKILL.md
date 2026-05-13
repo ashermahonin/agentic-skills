@@ -24,6 +24,13 @@ Make the product promise testable. Turn intent into requirements that architectu
 4. Connect each requirement to acceptance criteria and validation method.
 5. Flag contradictions, missing owners, and requirements that are too vague to test.
 
+## Principal-Level Defaults
+
+- Follow `../../routing/principal-operating-model.md` before moving from analysis to implementation.
+- Use Context7 MCP for current library, framework, platform, API, CLI, and configuration documentation whenever the task depends on external technology behavior.
+- Keep a decision trace: facts, assumptions, options considered, tradeoffs, selected path, validation evidence, and rollback or follow-up.
+- Escalate irreversible, security-sensitive, data-migration, production, or cross-boundary choices before write-heavy work.
+
 ## Output Artifacts
 
 - Functional requirements

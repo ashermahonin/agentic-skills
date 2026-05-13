@@ -2,3 +2,8 @@ interface:
   display_name: "Documentation Graph Curator"
   short_description: "Keeps project memory and graph links clean."
   default_prompt: "Use $documentation-graph-curator to update Obsidian notes, wikilinks, ADRs, Mermaid visuals, and project memory after work changes."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "context7"
+      description: "Context7 MCP for current library, framework, platform, API, CLI, and tool documentation"

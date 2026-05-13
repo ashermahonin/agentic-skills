@@ -2,3 +2,8 @@ interface:
   display_name: "Intake Coordinator"
   short_description: "Turns vague requests into usable briefs."
   default_prompt: "Use $intake-coordinator to clarify the request, constraints, success criteria, and approval gates before work starts."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "context7"
+      description: "Context7 MCP for current library, framework, platform, API, CLI, and tool documentation"

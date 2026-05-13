@@ -2,3 +2,8 @@ interface:
   display_name: "PR Review"
   short_description: "Finds regressions before changes land."
   default_prompt: "Use $pr-review to review a diff for correctness, regressions, missing tests, security, compatibility, and docs drift."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "context7"
+      description: "Context7 MCP for current library, framework, platform, API, CLI, and tool documentation"

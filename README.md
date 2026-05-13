@@ -28,9 +28,17 @@ Agentic Skills is a professional SDLC skill pack for AI coding agents. It gives 
 
 The repository keeps the root clean and places the working system under one main directory: [`agentic/`](agentic/).
 
+For high-risk or cross-cutting work, the system applies a principal-level bar: current documentation evidence, explicit decision trace, validation ladder, rollback, and a clean handoff before write-heavy implementation.
+
 ## Routing Diagram
 
 ![Agentic Skills routing flow](agentic/docs/assets/routing-flow.svg)
+
+## Prerequisites
+
+- Codex, Claude Code, or another MCP-compatible agent environment.
+- Context7 MCP configured as `context7`/`mcpcontext7` so agents can fetch current library, framework, API, CLI, and platform documentation before code generation or configuration work.
+- Optional but recommended: a project-memory workspace such as Obsidian for the generated notes and graph links.
 
 ## Quick Start
 
@@ -118,4 +126,4 @@ python3 agentic/scripts/validate.py
 ./install.sh --global --dry-run
 ```
 
-The validator checks expanded skill structure, GitHub documentation, routing, SVG assets, Obsidian skeleton, and installer health.
+The validator checks expanded skill structure, Context7 MCP metadata, GitHub documentation, routing, SVG assets, Obsidian skeleton, and installer health.

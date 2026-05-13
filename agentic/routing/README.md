@@ -18,6 +18,8 @@
 - Исследование, planning, code archaeology, architecture, decomposition, QA и review по умолчанию read-only.
 - Реализация начинается через `service-implementation` только после понятных требований, ownership, contracts и validation pack.
 - Параллельные агенты допускаются только после фиксации write scopes, interfaces, dependency order и merge order.
+- Context7 MCP обязателен перед решениями, зависящими от актуальной документации библиотек, API, CLI, платформ или конфигурации.
+- Для рискованных изменений применяется [principal-level operating model](principal-operating-model.md): evidence, decision trace, validation ladder, rollback и понятная передача контекста.
 - Obsidian wikilinks являются источником графа. Mermaid только визуализирует уже зафиксированные связи.
 
 ### Карта
@@ -63,6 +65,8 @@ Machine-readable source: `agentic/routing/skills.json`.
 - Research, planning, code archaeology, architecture, decomposition, QA, and review are read-only by default.
 - Implementation starts through `service-implementation` only after requirements, ownership, contracts, and validation pack are clear.
 - Parallel agents are allowed only after write scopes, interfaces, dependency order, and merge order are explicit.
+- Context7 MCP is required before decisions that depend on current library, API, CLI, platform, or configuration documentation.
+- Risky changes follow the [principal-level operating model](principal-operating-model.md): evidence, decision trace, validation ladder, rollback, and clear handoff.
 - Obsidian wikilinks are the graph source of truth. Mermaid only visualizes relationships already captured in notes.
 
 ### Map

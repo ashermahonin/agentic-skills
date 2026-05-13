@@ -25,6 +25,13 @@ Keep the whole effort coherent. Treat this skill as the traffic controller for t
 5. Create a visible checkpoint after each phase: what changed, what is known, what is still blocked, and which skill owns the next step.
 6. Stop when the next action needs user approval, destructive access, production access, or a lasting architecture decision.
 
+## Principal-Level Defaults
+
+- Follow `../../routing/principal-operating-model.md` before moving from analysis to implementation.
+- Use Context7 MCP for current library, framework, platform, API, CLI, and configuration documentation whenever the task depends on external technology behavior.
+- Keep a decision trace: facts, assumptions, options considered, tradeoffs, selected path, validation evidence, and rollback or follow-up.
+- Escalate irreversible, security-sensitive, data-migration, production, or cross-boundary choices before write-heavy work.
+
 ## Output Artifacts
 
 - Entrypoint classification

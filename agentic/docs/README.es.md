@@ -6,6 +6,14 @@ Agentic Skills es un paquete profesional de skills y routing para desarrollo con
 
 ![Diagrama de enrutamiento](assets/routing-flow.es.svg)
 
+Para cambios de alto riesgo o transversales, el sistema aplica un estándar de nivel principal: evidencia de documentación actual, traza de decisiones, escalera de validación, rollback y handoff claro antes de la implementación intensiva.
+
+## Requisitos previos
+
+- Codex, Claude Code u otro entorno de agentes compatible con MCP.
+- Context7 MCP configurado como `context7`/`mcpcontext7` para obtener documentación actual de librerías, APIs, CLI, plataformas y configuración antes de generar código.
+- Se recomienda una memoria de proyecto, como Obsidian, para notas y enlaces del grafo.
+
 ## Inicio rápido 🚀
 
 ```bash

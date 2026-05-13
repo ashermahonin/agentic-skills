@@ -5,8 +5,27 @@
     "Use skills for repeatable procedures, not always-on prompt bloat.",
     "Enable multi-agent work only after interfaces and ownership are explicit.",
     "Keep research/planning/review read-only until gates pass.",
+    "Use Context7 MCP before external-library, framework, API, CLI, platform, or configuration decisions.",
+    "Require principal-level evidence, decision trace, validation ladder, rollback, and handoff for risky work.",
     "Update documentation and graph links together with code."
   ],
+  "prerequisites": {
+    "mcp": [
+      {
+        "name": "context7",
+        "aliases": [
+          "mcpcontext7"
+        ],
+        "required_for": [
+          "library/API documentation",
+          "code generation",
+          "setup/configuration",
+          "framework/platform/CLI behavior"
+        ]
+      }
+    ],
+    "principal_operating_model": "agentic/routing/principal-operating-model.md"
+  },
   "entrypoints": {
     "new_product": [
       "sdlc-orchestrator",

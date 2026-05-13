@@ -25,6 +25,13 @@ Make implementation boring in the best way. Convert a big plan into small, owned
 5. Define parallel lanes only when file ownership and contracts are disjoint.
 6. Write merge order, conflict policy, and fallback if a lane blocks.
 
+## Principal-Level Defaults
+
+- Follow `../../routing/principal-operating-model.md` before moving from analysis to implementation.
+- Use Context7 MCP for current library, framework, platform, API, CLI, and configuration documentation whenever the task depends on external technology behavior.
+- Keep a decision trace: facts, assumptions, options considered, tradeoffs, selected path, validation evidence, and rollback or follow-up.
+- Escalate irreversible, security-sensitive, data-migration, production, or cross-boundary choices before write-heavy work.
+
 ## Output Artifacts
 
 - Epics

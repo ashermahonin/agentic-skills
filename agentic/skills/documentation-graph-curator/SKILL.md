@@ -25,6 +25,13 @@ Keep the second brain useful instead of decorative. Make notes navigable, curren
 5. Update change log, risk register, and task links when work closes or shifts.
 6. Avoid machine-specific absolute paths in tracked docs.
 
+## Principal-Level Defaults
+
+- Follow `../../routing/principal-operating-model.md` before moving from analysis to implementation.
+- Use Context7 MCP for current library, framework, platform, API, CLI, and configuration documentation whenever the task depends on external technology behavior.
+- Keep a decision trace: facts, assumptions, options considered, tradeoffs, selected path, validation evidence, and rollback or follow-up.
+- Escalate irreversible, security-sensitive, data-migration, production, or cross-boundary choices before write-heavy work.
+
 ## Output Artifacts
 
 - Updated project notes

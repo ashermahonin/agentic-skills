@@ -25,6 +25,13 @@ Act like the last careful engineer before the change lands. Prioritize real bugs
 5. Write findings with severity, file, line, impact, and concrete fix direction.
 6. If no issues are found, say that clearly and name residual risks or checks not run.
 
+## Principal-Level Defaults
+
+- Follow `../../routing/principal-operating-model.md` before moving from analysis to implementation.
+- Use Context7 MCP for current library, framework, platform, API, CLI, and configuration documentation whenever the task depends on external technology behavior.
+- Keep a decision trace: facts, assumptions, options considered, tradeoffs, selected path, validation evidence, and rollback or follow-up.
+- Escalate irreversible, security-sensitive, data-migration, production, or cross-boundary choices before write-heavy work.
+
 ## Output Artifacts
 
 - Prioritized findings

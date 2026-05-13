@@ -25,6 +25,13 @@ Turn product intent and architecture constraints into concrete user journeys tha
 5. Identify which journeys are MVP, later phase, or explicitly out of scope.
 6. Hand off only journeys that are concrete enough to become epics, stories, tasks, and validation scenarios.
 
+## Principal-Level Defaults
+
+- Follow `../../routing/principal-operating-model.md` before moving from analysis to implementation.
+- Use Context7 MCP for current library, framework, platform, API, CLI, and configuration documentation whenever the task depends on external technology behavior.
+- Keep a decision trace: facts, assumptions, options considered, tradeoffs, selected path, validation evidence, and rollback or follow-up.
+- Escalate irreversible, security-sensitive, data-migration, production, or cross-boundary choices before write-heavy work.
+
 ## Output Artifacts
 
 - User story map

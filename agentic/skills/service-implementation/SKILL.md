@@ -25,6 +25,13 @@ Do the actual code work without losing the system contract. Implement narrowly, 
 5. Run the validation pack or report why it could not run.
 6. Update docs or Obsidian notes when behavior, architecture, commands, or decisions change.
 
+## Principal-Level Defaults
+
+- Follow `../../routing/principal-operating-model.md` before moving from analysis to implementation.
+- Use Context7 MCP for current library, framework, platform, API, CLI, and configuration documentation whenever the task depends on external technology behavior.
+- Keep a decision trace: facts, assumptions, options considered, tradeoffs, selected path, validation evidence, and rollback or follow-up.
+- Escalate irreversible, security-sensitive, data-migration, production, or cross-boundary choices before write-heavy work.
+
 ## Output Artifacts
 
 - Changed files summary
